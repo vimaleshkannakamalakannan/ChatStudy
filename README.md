@@ -112,13 +112,13 @@ while True:
 conn.close()
 server.close()
 ~~~
-##clientchat.py
+## clientchat.py
 ~~~
 import socket
 
 # Create socket
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-
+~~~
 ## Result:
 Thus the study on Client Server Chat Applications has been performed

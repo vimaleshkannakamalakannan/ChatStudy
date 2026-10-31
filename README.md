@@ -119,6 +119,35 @@ import socket
 # Create socket
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+host = "127.0.0.1"
+port = 12345
+
+# Connect to server
+client.connect((host, port))
+
+while True:
+    # Send message to server
+    msg = input("Client: ")
+    client.send(msg.encode())
+
+    if msg.lower() == "exit":
+        break
+
+    # Receive reply from server
+    server_msg = client.recv(1024).decode()
+    print("Server:", server_msg)
+
+    if server_msg.lower() == "exit":
+        break
+
+client.close()
 ~~~
+## Output(Serverchat.py)
+<img width="1442" height="888" alt="image" src="https://github.com/user-attachments/assets/12dcccce-59bb-4319-ab41-b216ef7eb89d" />
+## Output(Clientchat.py)
+<img width="1451" height="971" alt="image" src="https://github.com/user-attachments/assets/bec83c3c-7e00-43b1-a9b7-ee423e65b49e" />
+
 ## Result:
+
 Thus the study on Client Server Chat Applications has been performed
+
